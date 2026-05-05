@@ -34,4 +34,9 @@ public partial class GameInputEvents
 		return direction != Vector2.Zero;
 	}
 	
+	public static bool UseTool()
+	{
+		bool UseToolValue = Input.IsActionJustPressed("hit");
+		return UseToolValue;
+	}
 }

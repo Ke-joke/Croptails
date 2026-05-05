@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class ChoppingState : NodeState
+public partial class WateringState : NodeState
 {
 	[Export]
 	public Player Player;
@@ -32,19 +32,19 @@ public partial class ChoppingState : NodeState
 	{
 		// 进入状态时的初始化
 		if (Player.PlayerDirection == Vector2.Up) {
-			AnimatedSprite2D.Play("chopping_back");
+			AnimatedSprite2D.Play("watering_back");
 		}
 		else if (Player.PlayerDirection == Vector2.Down) {
-			AnimatedSprite2D.Play("chopping_front");
+			AnimatedSprite2D.Play("watering_front");
 		}
 		else if (Player.PlayerDirection == Vector2.Left) {
-			AnimatedSprite2D.Play("chopping_left");
+			AnimatedSprite2D.Play("watering_left");
 		}
 		else if (Player.PlayerDirection == Vector2.Right) {
-			AnimatedSprite2D.Play("chopping_right");
+			AnimatedSprite2D.Play("watering_right");
 		}
 		else {
-			AnimatedSprite2D.Play("chopping_front");
+			AnimatedSprite2D.Play("watering_front");
 		}
 	}
 

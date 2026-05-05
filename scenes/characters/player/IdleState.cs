@@ -56,6 +56,21 @@ public partial class IdleState : NodeState
 		{
 			EmitSignal(nameof(Transition), "Walk");
 		}
+		
+		if (Player.CurrentTool == DataTypes.Tools.AxeWood && GameInputEvents.UseTool())
+		{
+			EmitSignal(nameof(Transition), "Chopping");	
+		}
+		
+		if (Player.CurrentTool == DataTypes.Tools.TillGround && GameInputEvents.UseTool())
+		{
+			EmitSignal(nameof(Transition), "Tilling");	
+		}
+		
+		if (Player.CurrentTool == DataTypes.Tools.WaterCrops && GameInputEvents.UseTool())
+		{
+			EmitSignal(nameof(Transition), "Watering");	
+		}
 	}
 
 	public override void OnEnter()
