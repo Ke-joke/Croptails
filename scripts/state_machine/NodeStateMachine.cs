@@ -61,7 +61,7 @@ public partial class NodeStateMachine : Node
 
 		currentNodeState = newNodeState;
 		currentNodeStateName = currentNodeState.Name.ToString().ToLowerInvariant();
-		GD.Print(parentNodeName, " transitioned to state: ", currentNodeStateName);
-		GD.Print("Current State: ", currentNodeStateName);
+		//GD.Print(parentNodeName, " transitioned to state: ", currentNodeStateName);
+		//GD.Print("Current State: ", currentNodeStateName);
 	}
 }
