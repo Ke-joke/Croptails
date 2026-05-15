@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bot54ak4crqhs"]
 
-[ext_resource type="TileSet" uid="uid://dcaqtdvfufe8g" path="res://Tilesets/game_tile_set.tres" id="1_8re64"]
+[ext_resource type="TileSet" uid="uid://dcaqtdvfufe8g" path="res://tilesets/game_tile_set.tres" id="1_8re64"]
 [ext_resource type="PackedScene" uid="uid://dmng0y6272h6c" path="res://scenes/characters/player/player.tscn" id="2_fr2vv"]
 
 [node name="TestSceneHouseTilemap" type="Node2D" unique_id=2064460475]

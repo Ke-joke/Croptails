@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://bwnish0o1ikwv"]
 
-[ext_resource type="TileSet" uid="uid://dgq4sjavafmeg" path="res://Tilesets/house_tile_set.tres" id="1_jp7p4"]
+[ext_resource type="TileSet" uid="uid://dgq4sjavafmeg" path="res://tilesets/house_tile_set.tres" id="1_jp7p4"]
 
-[node name="smallHouse" type="Node2D" unique_id=1662570371]
+[node name="SmallHouse" type="Node2D" unique_id=1662570371]
 
 [node name="HouseTilemap" type="Node2D" parent="." unique_id=877175751]
 

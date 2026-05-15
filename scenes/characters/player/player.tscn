@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://y7orhmsvs4ig" path="res://scenes/characters/player/ChoppingState.cs" id="7_mk55u"]
 [ext_resource type="Script" uid="uid://o2khd2lrvbaa" path="res://scenes/characters/player/WateringState.cs" id="8_42irl"]
 [ext_resource type="Script" uid="uid://8ui70qtxig3i" path="res://scenes/characters/player/TillingState.cs" id="9_3xnwo"]
+[ext_resource type="PackedScene" uid="uid://colg44otebqsu" path="res://scenes/components/hit_component.tscn" id="10_3xnwo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hss88"]
 atlas = ExtResource("1_t61fv")
@@ -396,10 +397,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_kghjy"]
 radius = 4.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_djydg"]
+radius = 3.0
+
 [node name="Player" type="CharacterBody2D" unique_id=1668765980]
 collision_layer = 3
 script = ExtResource("1_mk55u")
-CurrentTool = 3
+CurrentTool = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1851916206]
 position = Vector2(0, -8)
@@ -425,10 +429,11 @@ script = ExtResource("6_xuses")
 Player = NodePath("../..")
 AnimatedSprite2D = NodePath("../../AnimatedSprite2D")
 
-[node name="Chopping" type="Node" parent="StateMachine" unique_id=686104510 node_paths=PackedStringArray("Player", "AnimatedSprite2D")]
+[node name="Chopping" type="Node" parent="StateMachine" unique_id=686104510 node_paths=PackedStringArray("Player", "AnimatedSprite2D", "HitComponentCollisionShape")]
 script = ExtResource("7_mk55u")
 Player = NodePath("../..")
 AnimatedSprite2D = NodePath("../../AnimatedSprite2D")
+HitComponentCollisionShape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
 
 [node name="Watering" type="Node" parent="StateMachine" unique_id=609738005 node_paths=PackedStringArray("Player", "AnimatedSprite2D")]
 script = ExtResource("8_42irl")
@@ -439,3 +444,9 @@ AnimatedSprite2D = NodePath("../../AnimatedSprite2D")
 script = ExtResource("9_3xnwo")
 Player = NodePath("../..")
 AnimatedSprite2D = NodePath("../../AnimatedSprite2D")
+
+[node name="HitComponent" parent="." unique_id=636038664 instance=ExtResource("10_3xnwo")]
+
+[node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent" unique_id=552076612]
+shape = SubResource("CircleShape2D_djydg")
+debug_color = Color(0.8682968, 0.28437054, 0.54154646, 0.41960785)
